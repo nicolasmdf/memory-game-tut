@@ -3,12 +3,12 @@ import './App.css'
 import SingleCard from './components/SingleCard'
 
 const cardImages = [
-  { "src": "/img/helmet-1.png", matched: false },
-  { "src": "/img/potion-1.png", matched: false },
-  { "src": "/img/ring-1.png", matched: false },
-  { "src": "/img/scroll-1.png", matched: false },
-  { "src": "/img/shield-1.png", matched: false },
-  { "src": "/img/sword-1.png", matched: false },
+  { "src": "/img/a.png", matched: false },
+  { "src": "/img/b.png", matched: false },
+  { "src": "/img/c.png", matched: false },
+  { "src": "/img/d.png", matched: false },
+  { "src": "/img/e.png", matched: false },
+  { "src": "/img/f.png", matched: false },
 ]
 
 function App() {
@@ -58,10 +58,15 @@ function App() {
     setTurns(prevTurns => prevTurns + 1)
     setDisabled(false)
   }
+   const allMatched = cards.length > 0 && cards.every(card => card.matched)
   return (
     <>
       <div className="App">
-        <h1>Magic Match</h1>
+        <h3>Bienvenidos Tomi y Oti a:</h3>
+        <h1>Ready Player Two</h1>
+        <h3>Dia del Niño Edition</h3>
+        <h4>El regalo se encuentra escondido. Solo ganar les dara acceso.</h4>
+        <h4>Buena suerte.</h4>
         <button onClick={shuffleCards}>New Game</button>
 
         <div className="card-grid">
@@ -75,7 +80,8 @@ function App() {
             />
          ))}
         </div>
-        <p>Turns: {turns}</p>
+        
+        {allMatched ? <p>MUY FELIZ DIA DEL NIÑOOOO!!!, llave desbloqueada. Ahora solo deben encontrar la cerradura.</p>: <p>Turns: {turns}</p>}
       </div>
     </>
   )
